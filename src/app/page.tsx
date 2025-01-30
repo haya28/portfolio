@@ -1,101 +1,101 @@
-import Image from "next/image";
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+const projects = [
+  {
+    title: '問題と回答ランダム表示ツール',
+    description: '2年生時に個人開発した、問題と回答をランダムに出すツール',
+    image: "/images/avatar.png",
+    link: 'https://github.com/haya28/kadai5.git',
+  },
+  {
+    title: '高専祭プログラミング補助',
+    description: '2023年度高専祭で5人チームで開発したプログラミング補助ツール',
+    image: '/kosensai-project.png',
+    link: 'https://github.com/kk2a/kosensai2-I-B.git',
+  },
+  {
+    title: '蛇ゲーム',
+    description: 'Googleの蛇ゲームを再現したシンプルなゲーム',
+    image: '/snake-game.png',
+    link: 'https://github.com/haya28/game.git',
+  },
+  {
+    title: '電卓',
+    description: '足し算・引き算・掛け算・割り算・微分積分ができる電卓',
+    image: '/dentaku_1.png',
+    link: 'https://github.com/haya28/GUI-app.git',
+  },
+  {
+    title: '高専生向けSNS',
+    description: '高専テクノゼミ主催のWebハッカソンで開発したSNS',
+    // image: '/kosen-sns.png',
+    image: '/dentaku_1.png',
+    link: 'https://github.com/K-ryuto/K-SNS.git',
+  },
+  {
+    title: 'Webサーバー構築手順書',
+    description: 'Webサーバーの構築手順書',
+    image: '/dentaku_1.png',
+    // image: '/server-manual.png',
+    link: '/images/3I-27-手順書.pdf',
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="min-h-screen bg-gray-100 p-8">
+      <nav className="fixed top-0 flex w-full justify-center space-x-6 bg-gray-900 py-4 text-white">
+        <Link href="/" className="hover:text-gray-300">Home</Link>
+        <Link href="/about" className="hover:text-gray-300">About</Link>
+        <Link href="/history" className="hover:text-gray-300">History</Link>
+        <Link href="/skill" className="hover:text-gray-300">Skill</Link>
+      </nav>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="mx-auto mt-16 max-w-4xl text-center">
+        <h1 className="text-4xl font-bold text-gray-900">Fukuda Hayato Portfolio</h1>
+        <p className="mt-2 text-gray-700">大阪公立大学工業高等専門学校 知能情報コース3年</p>
+        <p className="mt-2 text-gray-600">Next.jsとSupabaseを使った開発をしています。</p>
+      </div>
+
+      <div className="mt-10">
+        <h2 className="text-center text-2xl font-semibold text-gray-800">制作物</h2>
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <div key={index} className="rounded-lg bg-white p-4 shadow-md">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={500}
+                height={300}
+                className="rounded-md"
+              />
+              <h3 className="mt-2 text-xl font-semibold">{project.title}</h3>
+              <p className="mt-1 text-sm text-gray-600">{project.description}</p>
+              <Link
+                href={project.link}
+                className="mt-2 inline-block text-blue-500 hover:underline"
+              >
+                詳しく見る
+              </Link>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      <div className="mt-12 text-center">
+        <h2 className="text-xl font-semibold text-gray-800">リンク</h2>
+        <div className="mt-4 space-x-4">
+          <Link href="https://github.com/haya28" className="text-blue-500 hover:underline">
+            GitHub
+          </Link>
+          {/* <Link href="https://twitter.com/your-twitter" className="text-blue-500 hover:underline">
+            Twitter
+          </Link> */}
+        </div>
+      </div>
+    </main>
   );
 }
