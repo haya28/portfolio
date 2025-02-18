@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Webポートフォリオ
 
-## Getting Started
+このプロジェクトは、学生エンジニア向けの現代的でレスポンシブなWebポートフォリオです。プロジェクトの紹介、連絡先情報の提供、そして簡単なコンテンツ管理のための管理者インターフェースを含んでいます。
 
-First, run the development server:
+## 特徴
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **レスポンシブデザイン**: モバイルからデスクトップまで、さまざまな画面サイズにシームレスに適応します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **プロジェクトショーケース**: 画像と説明文が魅力的なカードレイアウトで表示されます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **連絡先セクション**: GitHubやZenn、メールへのリンクを含み、簡単にコミュニケーションが取れます。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **管理者モード**: Web インターフェースを通じて、プロジェクトの追加、編集、削除が直接行えます。
 
-## Learn More
+5. **ダークテーマ**: モダンで専門的な印象を与える、洗練されたダークカラースキームを使用しています。
 
-To learn more about Next.js, take a look at the following resources:
+6. **自己紹介セクション**: ポートフォリオ所有者の簡単な紹介と経歴を提供します。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 使用技術
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js**: ユーザーインターフェース構築のためのReactフレームワーク
+- **TypeScript**: 型安全なJavaScriptコード用
+- **Tailwind CSS**: レスポンシブでカスタマイズ可能なスタイリング用
+- **Lucide React**: 高品質アイコン用
+- **next/image**: 最適化された画像ロードと表示用
 
-## Deploy on Vercel
+## セットアップ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. リポジトリをクローンする:
+   ```
+   git clone <あなたのリポジトリURL>
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. 依存関係をインストールする:
+   ```
+   npm install
+   ```
+
+3. 開発サーバーを起動する:
+   ```
+   npm run dev
+   ```
+
+4. ブラウザで[http://localhost:3000](http://localhost:3000)を開いて、ポートフォリオを表示します。
+
+## 使用方法
+
+### ポートフォリオの閲覧
+
+ポートフォリオをナビゲートして、プロジェクトや連絡先情報を表示します。レスポンシブデザインにより、すべてのデバイスで快適な体験が保証されています。
+
+### 管理者モード
+
+管理者モードにアクセスするには:
+
+1. ページ下部の「管理者モードON」ボタンをクリックします。
+2. 管理者モードでは以下のことができます:
+   - 「Project」見出しの横にある「+」ボタンを使用して新しいプロジェクトを追加する。
+   - 各プロジェクトカードの「編集」ボタンを使用して既存のプロジェクトを編集する。
+   - 各プロジェクトカードの「削除」ボタンを使用してプロジェクトを削除する。
+3. 管理者モードを終了するには、「管理者モードOFF」ボタンをクリックします。
+
+## カスタマイズ
+
+自分用にポートフォリオをカスタマイズするには:
+
+1. `app/page.tsx`の左サイドバーの個人情報を更新します。
+2. プレースホルダー画像を自分のプロジェクト画像に置き換えます。
+3. `app/page.tsx`の`initialProjects`配列を自分のプロジェクトデータで更新します。
+4. 「お問い合わせ」セクションの連絡先リンクを、自分のプロフィールやメールを指すように変更します。
+
+## ライセンス
+
+このプロジェクトはオープンソースであり、MITライセンスの下で利用可能です。
