@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 
 // 仮のプロジェクトデータ
 const initialProjects = [
-  { id: 1, title: "プロジェクト1", description: "プロジェクト1の説明", image: "/placeholder.svg" },
+  { id: 1, title: "プロジェクト1", description: "このポートフォリオは、学生エンジニア福田捷人のプロジェクトとスキルを紹介するためのものです。使用技術には、Next.js、React、TypeScript、Supabase、Tailwind CSS、Lucide Icons、Next/Image、Next/Linkが含まれます。これらを組み合わせて、管理者専用のログイン機能を持つポートフォリオサイトを構築しています。", image: "/placeholder.svg" },
   { id: 2, title: "プロジェクト2", description: "プロジェクト2の説明", image: "/placeholder.svg" },
   { id: 3, title: "プロジェクト3", description: "プロジェクト3の説明", image: "/placeholder.svg" },
 ]
